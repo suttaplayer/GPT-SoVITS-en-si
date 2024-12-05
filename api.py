@@ -342,10 +342,10 @@ def get_phones_and_bert(text,language,version,final=False):
                 (1024, len(phones)),
                 dtype=torch.float16 if is_half == True else torch.float32,
             ).to(device)
-    elif language in {"zh", "ja", "ko", "yue", "auto", "auto_yue"}:
+    elif language in {"zh", "ja", "ko", "yue", "si", "pi", "auto", "auto_yue"}:
         textlist=[]
         langlist=[]
-        LangSegment.setfilters(["zh","ja","en","ko"])
+        LangSegment.setfilters(["zh","ja","en","ko", "si", "pi"])
         if language == "auto":
             for tmp in LangSegment.getTexts(text):
                 langlist.append(tmp["lang"])
@@ -730,6 +730,8 @@ dict_language = {
     "all_zh": "all_zh",
     "all_yue": "all_yue",
     "en": "en",
+    "si": "si",
+    "pi": "pi", 
     "all_ja": "all_ja",
     "all_ko": "all_ko",
     "zh": "zh",

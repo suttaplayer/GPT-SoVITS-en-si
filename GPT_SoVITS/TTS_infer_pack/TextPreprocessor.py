@@ -148,7 +148,7 @@ class TextPreprocessor:
         elif language in {"zh", "ja", "ko", "yue", "auto", "auto_yue"}:
             textlist=[]
             langlist=[]
-            LangSegment.setfilters(["zh","ja","en","ko"])
+            LangSegment.setfilters(["zh","ja","en","ko", "pi", "si"])
             if language == "auto":
                 for tmp in LangSegment.getTexts(text):
                     langlist.append(tmp["lang"])
