@@ -1,5 +1,5 @@
-from base_transliteration import BaseTransliteration, LiteralMapElement
-from SI_RS_MAPS import SI_RS_MAPS, SI_MODIFIERS_MAP, SI_PHONEMES, CONSO_END_FLAG
+from .base_transliteration import BaseTransliteration, LiteralMapElement
+from .SI_RS_MAPS import SI_RS_MAPS, SI_MODIFIERS_MAP, SI_PHONEMES, CONSO_END_FLAG
 
 _max_key_size = 0
 class AbstractS2RTransliteration(BaseTransliteration):

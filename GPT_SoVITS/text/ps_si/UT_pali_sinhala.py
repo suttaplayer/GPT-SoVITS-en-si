@@ -1,8 +1,8 @@
 import unicodedata
 
-from pali_si_transliteration import Roman2PhonemeTransliteration, Roman2SinhalaTransliteration
-from sinhala_transliteration import Sinhala2PhonemeTransliteration, Sinhala2RomanTransliteration
-from SI_RS_MAPS import SI_PHONEMES, RS_SI_MAPS, SI_RS_MAPS
+from .pali_si_transliteration import Roman2PhonemeTransliteration, Roman2SinhalaTransliteration
+from .sinhala_transliteration import Sinhala2PhonemeTransliteration, Sinhala2RomanTransliteration
+from .SI_RS_MAPS import SI_PHONEMES, RS_SI_MAPS, SI_RS_MAPS
 
 SIN_ROM_TEST_DATA = [
     "අ ආ ඇ ඈ ඉ ඊ උ ඌ එ ඒ ඓ ඔ ඕ ඖ ඍ ඎ ළ් ඐ",

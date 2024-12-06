@@ -1,5 +1,5 @@
-from base_transliteration import BaseTransliteration, LiteralMapElement
-from SI_RS_MAPS import CONSO_END_FLAG, REV_SI_MODIFIERS_MAP, RS_PHONEME_SWITCHES, RS_PHONEMES, RS_SI_MAPS, SI_MODIFIERS_MAP, SI_PHONEMES, SI_RS_MAPS
+from .base_transliteration import BaseTransliteration, LiteralMapElement
+from .SI_RS_MAPS import CONSO_END_FLAG, REV_SI_MODIFIERS_MAP, RS_PHONEME_SWITCHES, RS_PHONEMES, RS_SI_MAPS, SI_MODIFIERS_MAP, SI_PHONEMES, SI_RS_MAPS
 
 _max_key_size = 0
 
@@ -67,6 +67,15 @@ class Roman2PhonemeTransliteration(Roman2SinhalaTransliteration):
                 else:
                     ret = RS_PHONEMES[curr['key']][self._phoneme_idx]
         return ret
+
+    def _write_entry_value(self, entry_value: str, target: list):
+        if len(entry_value) == 0:
+            return
+        if self._phoneme_idx == 1 and entry_value != " ":
+            parts = entry_value.split(" ")
+            target.extend(parts)
+        else:
+            target.append(entry_value)
 
     @staticmethod
     def _build_phoneme_map():

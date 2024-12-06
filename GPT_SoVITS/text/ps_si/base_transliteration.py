@@ -13,7 +13,7 @@ class LiteralMapElement:
 
 class BaseTransliteration:
     def __init__(self, src_text: str, base_idx_map: list[dict[str, str]], modifier_map: dict[str, str], next_char_seq_size: int = 1):
-        self._orig_source = self._normalize(src_text)
+        self._orig_source = BaseTransliteration.normalize(src_text)
         self._remaining_text = list(self._orig_source)
         self._base_idx_map = base_idx_map
         self._modifier_map = modifier_map
@@ -84,7 +84,8 @@ class BaseTransliteration:
     def _skip_ahead(self, len: int):
         del self._remaining_text[:len]
 
-    def _normalize(self, text: str) -> str:
+    @staticmethod
+    def normalize(text: str) -> str:
         text = unicodedata.normalize('NFC', text) # text.normalize('NFC')
         rep_map = {
             "[;:：，；]": ",",

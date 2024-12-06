@@ -10,9 +10,9 @@
 # print("=================================")
 
 
-from text.english import g2p as g2p_e
-from text.korean import g2p as g2p_k 
-from text.pali_si import g2p as g2p_pi
+# from text.english import g2p as g2p_e
+# from text.korean import g2p as g2p_k 
+# from text.pali_si import g2p as g2p_pi
 
 from text.cleaner import clean_text
 
@@ -28,4 +28,9 @@ from text.cleaner import clean_text
 # print("pali", check)
 
 
-print("english", clean_text("Today's Tuesday. Are you sure? Are you serious! Yes, of course; nothing to look at here.","en"))
+# print("english", clean_text("Today's Tuesday. Are you sure? Are you serious! Yes, of course; nothing to look at here.","en"))
+
+print("english", clean_text("Today's Tuesday","en"))
+print("pali", clean_text("majjhima","pi"))
+print("sinhala", clean_text("මජ්ඣිම","si"))
+
